@@ -1,0 +1,20 @@
+version: "3"
+services:
+  app:
+    container_name: docker-pr
+    restart: always
+    build: .
+    ports:
+      - "8080:3000"
+    volumes:
+      - ./:/usr/src/app
+      - ./views:/usr/src/app/views
+      - ./models:/usr/src/app/models
+      - /usr/src/app/node_modules/
+    links:
+      - mongo
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - "27017:27017"
