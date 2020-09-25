@@ -1,1 +1,5 @@
+Step 1: in host machine write this command
+xhost +local:root
+
+Step 2: run the created image
 docker run -ti --rm --env="DISPLAY" --env="QT_X11_NO_MITSHM=1" -v /tmp/.X11-unix:/tmp/.X11-unix -v /opt:/opt -v /dev:/dev angelref/myimage
