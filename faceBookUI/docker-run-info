@@ -3,3 +3,7 @@ xhost +local:root
 
 Step 2: run the created image
 docker run -ti --rm --env="DISPLAY" --env="QT_X11_NO_MITSHM=1" -v /tmp/.X11-unix:/tmp/.X11-unix -v /opt:/opt -v /dev:/dev angelref/myimage
+
+STep 3: in host machine [to connect an android usb device to docker container]
+if there is no adb installed: sudo apt install adb
+adb kill-server
